@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+    <script>
+        function desplegar(tabla_desplegar) {
+            var tabla = document.getElementById(tabla_desplegar);
+            switch(tabla.style.display) {
+                case "none":
+                    tabla.style.display = "block";
+                    break;
+                default:
+                    tabla.style.display = "none";
+                    break;
+            }
+        }
+    </script>
+
+    <form action="/channels" method="post">
+    <body>
+
+        <div class="container">
+            {% for categorie in categories %}
+            <button class="button" name="cat" value="{{ categorie.categorie }}" type="submit">{{ categorie.categorie }}</button>
+            {% endfor %}
+        </div>
+
+        <table class="table">
+            <colgroup style="width: 10rem" span=1>
+            <colgroup style="width: 26rem" span=1>
+            <colgroup style="width: 10rem" span=1>
+            <thead>
+                <tr>
+                    <td class="textT1">Pos</td>
+                    <td class="textT1">Channel</td>
+                    <td class="textT1">Rating</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% set count = namespace(value=1) %}
+                {% for data in channels %}
+                <tr style="cursor:pointer;" onClick="desplegar('tabla_desplegar{{ data.id }}')">
+                    <td class="textT2">{{ count.value }}</td>
+                    <td class="textT2">{{ data.name }}</td>
+                    <td class="text2">{{ data.points }} &#9733</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table class="table2" id="tabla_desplegar{{ data.id }}" style="display: none;">
+                            <td>
+                                <iframe width="560" height="315"UPDAT
+                                src="https://www.youtube.com/embed/{{ data.url }}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                                gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                {% set count.value = count.value + 1 %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+    </form>
+
+{% endblock %}

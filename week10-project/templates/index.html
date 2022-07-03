@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <link href="/static/youtube.ico" rel="icon">
+        <title>YouTube channels {% block title %}{% endblock %}</title>
+    </head>
+
+
+    <body>
+        <div class="header">
+            <img src="static/youtube2.jpg" width="30" height="22">
+            <a class="titulo" >YouTube Channel Finder</a>
+        </div>
+
+        <table class="table_General">
+            <tr>
+                <td style="vertical-align: top; padding-top: 10px;">
+                    <a class="button_Gen" href="/channels">Home</a>
+                    <a class="button_Gen" href="/vote">Vote</a>
+                    <a class="button_Gen" href="/like">Channels you like</a>
+                    <a class="button_Gen" href="/about">About us</a>
+                    {% if session["user_id"] %}
+                    <hr style="border: none; height:1px; background-color: #D2D2D2">
+                    <a class="button_Gen" href="/logout">Log Out</a>
+                    {% else %}
+                    <hr style="border: none; height:1px; background-color: #D2D2D2">
+                    <a class="button_Gen" href="/login">Log In</a>
+                    <a class="button_Gen" href="/register">Register</a>
+                    {% endif %}
+                </td>
+
+
+                <td style="vertical-align: top;">
+                <main>
+                    {% block main %}{% endblock %}
+                </main>
+                </td>
+            </tr>
+        </table>
+    </body>
+
+</html>

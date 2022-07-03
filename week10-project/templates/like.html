@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+    <form action="/like">
+    <body>
+        <div class="container">
+            <table class="table">
+                <colgroup style="width: 18rem" span=1>
+                <colgroup style="width: 8rem" span=1>
+                <thead>
+                    <tr>
+                        <td class="textT1">Channel</td>
+                        <td class="textT1">Rating</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for data in register %}
+                    <tr>
+                        <td class="textT2">{{ data.channel }}</td>
+                        <td class="text2">{{ data.points }} &#9733</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+    </body>
+    </form>
+
+{% endblock %}

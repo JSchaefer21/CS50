@@ -1,0 +1,189 @@
+/*
+Youtube red: #FF0000
+Youtube black: #282828
+Marcos: #D2D2D2
+Fondo boton: #F0F0F0
+Fondo seleccion: #E8E8E8
+*/
+
+body {
+    background-color: #FFFFFF;
+    color: #3C3C3D;
+    text-align: left;
+}
+
+.header {
+    background-color: #FFFFFF;
+    margin: 0px 20px; /* margen  por fuera */
+    padding-top: 5px;
+    padding-left: 15px; /* margen de altura y horizontal con el titulo */
+    border: 1.5px solid #D2D2D2;
+    border-radius: 0.25rem;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.titulo{
+    margin: 1px;
+    color: #282828;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.container {
+    background-color: #FFFFFF;
+    margin-left: 5px; /* margen  por fuera */
+    margin-top: 5px;
+    /*padding: 18px 10px; /* margen de altura y horizontal por dentro */
+    text-align: left;
+}
+
+.text{
+    margin: 6px 10px;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.text2{
+    margin: 6px;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+.textT1{
+    padding: 12px 0rem;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+.textT2{
+    padding: 8px 0rem;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.formular {
+    background-color: #FFFFFF;
+    padding: 8px 0px; /* margen de altura y horizontal por dentro */
+    margin-left: 20px;
+}
+
+.table_General {
+    margin: 5px 20px;
+}
+
+.table {
+    margin-left: 5px;
+    margin-top: 12px;
+    text-align: center;
+    background-color: #E8E8E8;
+    border: 1.5px solid #D2D2D2;
+    border-radius: 5px;
+}
+
+.table2{
+    padding: 0.75rem 5rem;
+    background-color: #8E8E8E;
+    border-radius: 2px;
+}
+
+
+body tr:nth-child(even) {
+    background-color: #D2D2D2;
+  }
+
+
+
+
+.button_Gen, input[type="submit"] {
+    display: block;
+    padding: 10px 30px; /* distancia dentro del propio boton */
+    padding-left: 25px;
+    text-decoration: none;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border: none;
+    background: white;
+    text-align:left;
+    font-weight: 400;
+}
+.button_Gen:hover{
+    background: #E8E8E8;
+}
+
+.button, input[type="submit"] {
+    background-color: #F0F0F0;
+    border: 1.5px solid #D2D2D2;
+    border-radius: 1rem;
+    padding: 0.4rem 0.8rem; /* distancia dentro del propio boton */
+    margin: 0px 5px; /* margen del boton por fuera */
+
+    text-decoration: none;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    cursor:pointer
+}
+.button:hover{
+    background: #E8E8E8;
+}
+
+.button2, input[type="submit"] {
+    background-color: #E32F2F;
+    border: 1.5px solid #D2D2D2;
+    border-radius: 7px;
+    padding:4px 8px; /* distancia dentro del propio boton */
+    margin: 5px; /* margen del boton por fuera */
+    margin-left: 20px;
+
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor:pointer;
+}
+
+.button3, input[type="submit"] {
+    background-color: #F0F0F0;
+    border: 1.5px solid #D2D2D2;
+    border-radius: 30px;
+    padding: 2px 7px; /* distancia dentro del propio boton */
+    margin: 0px 2px; /* margen del boton por fuera */
+    text-decoration: none;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    cursor:pointer
+}
+.button3:hover{
+    background: #E32F2F;
+    color: #FFFFFF;
+}
+
+
+.custom-select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #282828;               /* color texto */
+    padding: .3em .5em .3em .3em; /* distancia selector con letra */
+    width: 334px;                 /* largo casilla */
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+
+    border: 1.5px solid #D2D2D2;
+    border-radius: 0.3rem;
+    background-color: #F0F0F0;
+}
+.custom-select:hover {
+    background-color: #E8E8E8;
+    }

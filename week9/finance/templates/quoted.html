@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <form action="/quoted" method="post">
+    <h5>Founded!</h5>
+        <tr>
+            <td>{{ stonk.name }}  --  {{ stonk.price | usd }}  --  {{ stonk.symbol }} </td>
+        </tr>
+    </form>
+{% endblock %}

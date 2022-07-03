@@ -1,0 +1,71 @@
+body {
+    background-color: #FFFFFF;
+    color: #3C3C3D;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.encabezado {
+    background-color: #B8C4CD;
+    color: #F1F1F1;
+    margin-bottom: 0rem;  /* margen de altura debajo */
+    padding: 1rem 3rem; /* margen de altura y horizontal con el titulo */
+}
+.menu {
+    padding: 0rem 2rem;
+}
+.container0 {
+    background-color: #56585E;
+    padding: 0rem; /* margen de altura interior espacio*/
+}
+.container1 {
+    background-color: #EFF6FB;
+    padding: 8rem; /* margen de altura interior espacio*/
+}
+.container2 {
+    background-color: #56585E;
+    padding: 1rem 10rem; /* margen de altura interior espacio*/
+}
+
+.spacer {
+    background-color: #56585E;
+    padding: 2.15rem; /* margen de altura interior espacio*/
+}
+
+#reloj {
+    font-size: 46px;
+    font-family: 'Open Sans',sans-serif;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+button, input[type="submit"] {  /* solo usa el margin, pero lo guardo para futuro */
+    background-color: #C3C1C1;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid transparent; /* distancia dentro del propio boton */
+    border-radius: 0.5rem;
+    padding: 0.4rem 1.8rem; /* distancia dentro del propio boton */
+    margin: 0rem 0.6rem; /* margen del boton por fuera */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.spinner-grow {
+    animation-duration: 3s;
+}
+
+.spinner-border {
+    animation-duration: 3s;
+}

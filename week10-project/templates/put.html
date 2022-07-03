@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+    <form action="/put" method="post">
+    <body>
+        <div class="container">
+
+
+            <div class="container">
+                <div class="formular">
+                    <input autocomplete="off" name="name" placeholder="Channel's name" type="text">
+                </div>
+                <div class="formular">
+                    <input autocomplete="off" name="url" placeholder="URL from famous video" type="text">
+                </div>
+                <div class="formular">
+                    <input autocomplete="off" name="votes" placeholder="votos" type="numeric">
+                </div>
+                <div class="formular">
+                    <input autocomplete="off" name="points" placeholder="puntuacion" type="numeric">
+                </div>
+                <div class="formular">
+                    <select name="categorie">
+                        <option disabled selected value="">Categories</option>
+                        {% for cat in categories %}
+                            <option value="{{ cat }}">{{ cat }}</option>
+                        {% endfor %}
+                    </select>
+                    <a class="text2">Please Select the most relevant categorie that describes better the channel</a>
+                </div>
+
+
+                <button class="button2" type="submit">Añadir</button>
+            </div>
+
+        </div>
+    </body>
+    </form>
+
+{% endblock %}

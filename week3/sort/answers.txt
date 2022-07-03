@@ -1,0 +1,15 @@
+sort1 uses: bubble sort
+
+How do you know?:
+is the one who needs more time to organize a reversed file
+because it has to move the last number one by one until he reach the first position
+
+sort2 uses: merge sort
+
+How do you know?:
+is the faster with the randon, reversed and sorted numbers
+
+sort3 uses: selection sort
+
+How do you know?:
+is the one who needs more time for the already sorted numbers

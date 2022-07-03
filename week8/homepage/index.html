@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <!-- links para  Bootstraps -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- links para a mi archivo de styles -->
+        <link href="styles.css" rel="stylesheet">
+        <title>Mi web</title>
+
+        <script>
+        // aqui va funcionalidades JAVA
+                window.onload = function() {
+                    visor=document.getElementById("reloj");
+                }
+                var cent = 0;
+                var seg = 0;
+                var min = 0;
+                var cro=0;
+                var marcha = false;
+                var parada = false;
+
+                function inicio () {
+                    if (marcha == false && parada == false) {
+                        if (cro == 0 ) { emp=new Date(); }
+                        control = setInterval(cronometro,10);
+                        marcha = true;  }
+                    else if (marcha == false && parada == true){
+                        emp2=new Date(); //fecha actual
+                        emp2=emp2.getTime(); //pasar a tiempo Unix
+                        emp3=emp2-cro; //restar tiempo anterior
+                        emp=new Date(); //nueva fecha inicial para pasar al temporizador
+                        emp.setTime(emp3); //datos para nueva fecha inicial.
+                        control = setInterval(cronometro,10);
+                        marcha = true;  }
+                }
+                function parar () {
+                    if (marcha == true) {
+                        clearInterval(control);
+                        marcha = false;
+                        parada = true;  }
+                }
+                function reinicio () {
+                    clearInterval(control);
+                    cent = 0;
+                    seg = 0;
+                    min = 0;
+                    cro=0;
+                    reloj.innerHTML = "00 00";
+                    marcha = false;
+                    parada = false;
+                    emp=new Date();
+                }
+                function cronometro () {
+                    actual=new Date(); //fecha a cada instante
+                    //tiempo del crono (cro) = fecha instante (actual) - fecha inicial (emp)
+                    cro=actual-emp; //milisegundos transcurridos.
+                    cr=new Date(); //pasamos el num. de milisegundos a objeto fecha.
+                    cr.setTime(cro);
+                    cent=cr.getMilliseconds(); //milisegundos
+                    cent=cent/10; //paso a centésimas de segundo.
+                    cent=Math.round(cent); //redondear las centésimas
+                    seg=cr.getSeconds(); //segundos
+                    min=cr.getMinutes(); //minutos
+                    if (seg<10) {seg="0"+seg;}
+                    if (min<10) {min="0"+min;}
+                    visor.innerHTML= min+" "+seg;
+                }
+        </script>
+
+    </head>
+
+
+
+    <body>
+        <div class="encabezado">
+            <h1>Timer page!</h1>
+        </div>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><b>Home</b></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hoja_1.html">Info</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hoja_2.html">Hoja 2</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hoja_3.html">Hoja 3</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container0">
+            <div id="reloj">00  00</div>
+        </div>
+
+
+        <div class="container1">
+            <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span></div>
+        </div>
+
+
+        <div class="container2">
+            <button type="button" id="inicio" onclick="inicio();"class="btn btn-success"><b>START</b></button>
+            <button type="button" id="parar" onclick="parar();"class="btn btn-secondary"><b>STOP</b></button>
+            <button type="button" id="reinicio" onclick="reinicio();"class="btn btn-secondary"><b>&#8635;</b></button>
+        </div>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+    <form action="/vote" method="post">
+    <body>
+        <div class="container">
+            <div class="text" style="margin-top: 20px;">Use this site to vote for your favorite YouTube Channel</div>
+            <div class="text">We recommend the channels according to the preferences of the community</div>
+            <div class="text">The channels with the highest score and most votes will be recommended first</div>
+
+            <div class="container">
+                <div class="formular">
+                        <select class="custom-select" name="name">
+                            <option disabled selected value="">Channel</option>
+                            {% for cha in channels %}
+                                <option value="{{ cha }}">{{ cha }}</option>
+                            {% endfor %}
+                        </select>
+                </div>
+                <div class="formular">
+                {% for i in range(1, 11) %}
+                    <button class="button3" name="point" value="{{ i }}" type="submit">{{ i }}</button>
+                {% endfor %}
+                <span class="textT2">Points &#9733</span>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    </form>
+
+{% endblock %}
